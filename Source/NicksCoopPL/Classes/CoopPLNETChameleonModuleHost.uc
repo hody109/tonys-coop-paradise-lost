@@ -15,6 +15,47 @@ class CoopPLNETChameleonModuleHost extends CoopNETChameleonModuleHost;
 var StaticMesh CheckSkySphereSM;
 var float NextPLSkyCheck;
 
+function NETChameleonServer_Pawn(float DeltaTime)
+{
+    local LabMonkey M;
+    local LabMonkeyController MC;
+    local CoopPLPlayerClient C, Current;
+    local Pawn Closest;
+    local float Distance, BestDistance;
+    Super.NETChameleonServer_Pawn(DeltaTime);
+    foreach DynamicActors(class'LabMonkey',M)
+    {
+        // Quest animals must remain replicated to all members of the team.
+        M.bAlwaysRelevant=true;
+        MC=LabMonkeyController(M.Controller);
+        if(MC==None || M.Health<=0 || MC.bReleasedFromPostalDude) continue;
+        Current=None;
+        if(MC.PostalDude!=None) Current=CoopPLPlayerClient(MC.PostalDude.Controller);
+        if(Current!=None && Current.Player!=None && MC.PostalDude.Health>0) continue;
+        Closest=None;
+        BestDistance=100000000;
+        foreach DynamicActors(class'CoopPLPlayerClient',C)
+            if(C.Player!=None && C.Pawn!=None && C.Pawn.Health>0)
+            {
+                Distance=VSize(C.Pawn.Location-M.Location);
+                if(Distance<BestDistance) {Closest=C.Pawn;BestDistance=Distance;}
+            }
+        if(Closest==None) continue;
+        MC.PostalDude=Closest;
+        if(MC.FormationAnchor!=None) MC.FormationAnchor.SetTarget(Closest);
+    }
+}
+
+static function TearOffNetworkConnectionFor(P2MoCapPawn Body, class<DamageType> DamageType)
+{
+    Body.bReplicateMovementAnim=false;
+    Body.bReplicateAnimations=false;
+    Body.TearOffNetworkConnection(DamageType);
+    Body.LifeSpan=180;
+    Body.SetTimer(180,false);
+    Body.Spawn(class'CoopPLBodyRetention',Body);
+}
+
 function NETChameleonClient(float DeltaTime)
 {
     local DayBlocker Sky;

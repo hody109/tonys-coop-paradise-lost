@@ -60,8 +60,15 @@ try {
         $iniPath=Join-Path $system $iniName
         if (!(Test-Path -LiteralPath $iniPath)) { continue }
         $iniText=[IO.File]::ReadAllText($iniPath)
+        $originalIniText=$iniText
+        # Upgrade the former low population/body presets; preserve other values.
+        $iniText=[regex]::Replace($iniText,'(?im)^SliderPawnGoal=12[ \t]*\r?$', 'SliderPawnGoal=30')
+        $iniText=[regex]::Replace($iniText,'(?im)^CoopSliderPawnGoalMax=12[ \t]*\r?$', 'CoopSliderPawnGoalMax=30')
+        $iniText=[regex]::Replace($iniText,'(?im)^BodiesSliderMax=8[ \t]*\r?$', 'BodiesSliderMax=25')
         if ($iniText -notmatch '(?im)^Paths=\.\.\\KarmaData\\\*\.ka\s*$') {
             $iniText=$iniText.Replace('[Core.System]',"[Core.System]`r`nPaths=..\KarmaData\*.ka")
+        }
+        if($iniText -ne $originalIniText) {
             [IO.File]::WriteAllText($iniPath,$iniText,[Text.Encoding]::Default)
         }
     }

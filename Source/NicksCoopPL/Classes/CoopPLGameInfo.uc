@@ -33,6 +33,12 @@ var array<PLPickupClaim> PLPickupClaims;
 var Pawn PLPickupReceiver;
 var Pickup PLPickupItem;
 
+function LoadCoOpDefaults()
+{
+    // Honor the host's population setting without the legacy ten-body clamp.
+    SliderPawnGoal=Max(0,CoopSliderPawnGoalMax);
+}
+
 function SetFluidSurfaceInfoDefaults()
 {
     local FluidSurfaceInfo F;
@@ -601,7 +607,7 @@ defaultproperties
 	FinishedDayURL		= "PL-StartNextDay"
 	JailURL				= "PL-Saloon.fuk#cell"
 
-	CoopSliderPawnGoalMax=12
+	CoopSliderPawnGoalMax=30
 	GameName="NicksCoop PL"
 	GameNameShort="NicksCoop PL"
 

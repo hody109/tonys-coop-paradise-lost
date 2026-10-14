@@ -31,6 +31,19 @@ var array<bool> PLCinematicOldHidden;
 var bool bPLLevelAudioReady;
 var bool bPLLevelMusicRestored;
 
+simulated event PreClientTravel()
+{
+ local Actor A;
+ Super.PreClientTravel();
+ if(Level.NetMode!=NM_Client) return;
+ foreach AllActors(class'Actor',A)
+ {
+  if(A.Physics==PHYS_Karma || A.Physics==PHYS_KarmaRagDoll) A.SetPhysics(PHYS_None);
+  if(A.bBlockKarma) A.KSetBlockKarma(false);
+ }
+ Log("PLPHYSICS|released-before-travel");
+}
+
 simulated function InitPLLevelAudio()
 {
     local int i;
