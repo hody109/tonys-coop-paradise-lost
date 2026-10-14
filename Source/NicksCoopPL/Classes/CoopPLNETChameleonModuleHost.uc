@@ -13,6 +13,24 @@
 class CoopPLNETChameleonModuleHost extends CoopNETChameleonModuleHost;
 
 var StaticMesh CheckSkySphereSM;
+var float NextPLSkyCheck;
+
+function NETChameleonClient(float DeltaTime)
+{
+    local DayBlocker Sky;
+    Super.NETChameleonClient(DeltaTime);
+    if(Level.TimeSeconds < NextPLSkyCheck) return;
+    NextPLSkyCheck=Level.TimeSeconds+0.5;
+    // The old extension hook below is not called by the 5025 base module.
+    // bUnlit is not replicated; spawned day-specific sky domes otherwise
+    // receive the dark lighting of their remote skybox on every client.
+    foreach DynamicActors(class'DayBlocker',Sky)
+        if(Sky.StaticMesh==CheckSkySphereSM && !Sky.bUnlit)
+        {
+            Sky.bUnlit=true;
+            Log("PLSKY|restored-unlit|" $ Sky);
+        }
+}
 
 ///steam 11/11/2017
 simulated function xClientSetupChameleonExtended(Actor aChameleon)

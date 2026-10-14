@@ -31,11 +31,17 @@ Setup uses files from your own game installation. The original installation and 
 
 The default mode starts a dedicated server on the host's PC. Select the player limit and difficulty before starting a new campaign. Keep the launcher open while playing.
 
+Dedicated hosting uses the installed 5025 game executable in server mode. UCC remains available for compilation; the launcher no longer uses its legacy server mode for gameplay.
+
 For internet play, open **INTERNET**, install Playit, and use **START / LINK AGENT** to link it to your own account. Create a Custom UDP tunnel pointing to `127.0.0.1:7777`, or the public UDP port selected in the launcher. Save the tunnel's public `hostname:port`. Friends enter that address and choose **JOIN GAME**. Only the host needs the Playit agent. The host PC must stay on.
 
 The launcher starts a UDP relay automatically for dedicated hosting. Leave Playit's target on the selected public port; the game's internal port is managed automatically. Direct host (experimental) does not use this relay.
 
 For LAN play, connect to the host's local IPv4 address and selected port. The launcher does not configure your firewall or router.
+
+## Campaign presentation
+
+Network clients restore the original area's ambient loops and day-specific sky lighting after loading. Day transitions show the original game's loading artwork to all connected players. The map screen also plays its original music, paper and writing sounds.
 
 ## Display mode
 

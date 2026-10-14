@@ -28,7 +28,54 @@ var string PLRememberedSkin;
 var bool bPLSkinRemembered;
 var array<Actor> PLCinematicHiddenActors;
 var array<bool> PLCinematicOldHidden;
+var bool bPLLevelAudioReady;
+var bool bPLLevelMusicRestored;
 
+simulated function InitPLLevelAudio()
+{
+    local int i;
+    if(bPLLevelAudioReady || Level.NetMode!=NM_Client || Player==None
+        || Player.InteractionMaster==None || ViewTarget==None) return;
+    bPLLevelAudioReady=true;
+    // 5025 retains the previous map's static audio list after a network join.
+    // Rebuild it so native ZoneSounds/volume ambience work as in singleplayer.
+    ConsoleCommand("SOUND_REBOOT");
+    for(i=0;i<ArrayCount(SongInfos_ClientHandle);i++) SongInfos_ClientHandle[i]=0;
+    ServerPLRestoreLevelMusic();
+    Log("PLAUDIO|level-initialized");
+}
+
+function ServerPLRestoreLevelMusic()
+{
+    local int i;
+    if(bPLLevelMusicRestored || Player==None || Buoyancy==75) return;
+    bPLLevelMusicRestored=true;
+    for(i=0;i<ArrayCount(SongInfos_ClientSong);i++) SongInfos_ClientSong[i]="";
+    CoopGameInfo(Level.Game).xNETCallRestoreMusic(self);
+}
+
+
+// The story controller has no viewport on a dedicated server.
+// Send the original day card to every real player's persistent root window.
+function DisplayLoad(DayBase Day, string URL)
+{
+    local CoopPLPlayerClient C;
+    if(Day!=None && Buoyancy==75)
+        foreach DynamicActors(class'CoopPLPlayerClient',C)
+            if(C.Player!=None && C.Buoyancy!=75)
+                C.ClientPLDayLoad(string(Day.LoadTex),Day.Description);
+    if(IsCoopDedicatedHost() && MyLoadScreen==None && URL!="")
+        CoopCallDelayedURLTravel(URL,0.5);
+    else Super.DisplayLoad(Day,URL);
+}
+
+simulated function ClientPLDayLoad(string TextureName,string DayName)
+{
+    local CoopPLShellRootWindow R;
+    if(Player==None || Player.InteractionMaster==None) return;
+    R=CoopPLShellRootWindow(Player.InteractionMaster.BaseMenu);
+    if(R!=None) R.ShowPLDayLoad(TextureName,DayName);
+}
 
 function DisplayMapErrands(optional string SendToURL, optional bool bWantFancyFadeIn)
 {
@@ -125,9 +172,9 @@ function NETCoopWaitContinue()
 
 replication
 {
-    reliable if(Role<ROLE_Authority) ServerPLVoteSkip;
+    reliable if(Role<ROLE_Authority) ServerPLVoteSkip, ServerPLRestoreLevelMusic;
 	reliable if( Role == ROLE_Authority )
-		xClientHitByFlashBang, bPLIntroLocked, PLSelectedSkin, ClientPLBriefing;
+		xClientHitByFlashBang, bPLIntroLocked, PLSelectedSkin, ClientPLBriefing, ClientPLDayLoad;
 }
 
 ///steam 11/01/2018
@@ -324,6 +371,7 @@ simulated function PlayerTick(float DeltaTime)
         bFire=0; bAltFire=0; bDuck=0; bRun=0; bPressedJump=false;
     }
     Super.PlayerTick(DeltaTime);
+    InitPLLevelAudio();
     if(bPLBriefingPending && CoopPLMapInteraction(CoopMap)!=None
         && CoopGameReplicationInfo(GameReplicationInfo)!=None
         && CoopGameReplicationInfo(GameReplicationInfo).CurrentDay==PLBriefingDay)

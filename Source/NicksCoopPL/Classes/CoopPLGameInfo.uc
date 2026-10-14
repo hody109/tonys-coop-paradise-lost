@@ -33,6 +33,15 @@ var array<PLPickupClaim> PLPickupClaims;
 var Pawn PLPickupReceiver;
 var Pickup PLPickupItem;
 
+function SetFluidSurfaceInfoDefaults()
+{
+    local FluidSurfaceInfo F;
+    // These native visual surfaces are map-local. Replicating them after the
+    // legacy server-only bNoDelete mutation crashes direct-connected clients.
+    foreach AllActors(class'FluidSurfaceInfo',F)
+        F.RemoteRole=ROLE_None;
+}
+
 function VoteToSkipPLIntro(CoopPLPlayerClient Voter)
 {
     local CoopPLPlayerClient P;

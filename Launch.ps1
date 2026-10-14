@@ -128,7 +128,10 @@ try {
             }
             if(!$relayReady) { throw 'The UDP relay did not become ready. See Runtime\System\PLCoopRelay.log.' }
             Write-Host "Stable public UDP port: $Port. Keep your Playit tunnel pointing to 127.0.0.1:$Port."
-            $server=Start-Process -FilePath (Join-Path $system 'UCC.exe') -ArgumentList @('server',$url,"-port=$serverPort",'ini=Server.ini','log=PLCoop-Server.log','-unattended','-forcelogflush') -WorkingDirectory $system -WindowStyle Hidden -PassThru
+            # Use the installed 5025 game executable in dedicated-server mode.
+            # The legacy UCC server crashes inside Karma during repeated day travel.
+            # -newwindow prevents forwarding the server URL to an existing client.
+            $server=Start-Process -FilePath (Join-Path $system 'PLCoop5025.exe') -ArgumentList @($url,'-server','-newwindow',"-port=$serverPort",'ini=Server.ini','log=PLCoop-Server.log','-unattended','-forcelogflush') -WorkingDirectory $system -WindowStyle Hidden -PassThru
             Start-Sleep -Seconds 10
             if ($server.HasExited) { throw 'The server exited. See Runtime\System\PLCoop-Server.log.' }
             $url='127.0.0.1:'+$serverPort+'?Name='+$PlayerName+'?PLHostKey='+$hostKey

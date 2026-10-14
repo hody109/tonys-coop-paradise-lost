@@ -13,10 +13,47 @@
 class CoopPLMapInteraction extends CoopMapInteraction;
 
 
+// Map presentation runs locally; the server deliberately excludes map_muzak.
+var bool bPLMapAudio;
+var int PLMapSong;
 var bool bBriefing;
 var int BriefMask, BriefErrand, BriefStage, FadeSprite;
 var float NextBriefTime, FadeStarted;
 var DayBase BriefDay;
+var int BriefCount;
+
+
+
+function UpdateMapAudio()
+{
+    if(ViewportOwner.Actor==None) return;
+    if(bEnableShow && !bPLMapAudio)
+    {
+        bPLMapAudio=true;
+        PLMapSong=ViewportOwner.Actor.PlayMusic(class'MapScreen'.default.Song,1.0,,false);
+        ViewportOwner.Actor.PlaySound(class'MapScreen'.default.FadeInScreenSound,SLOT_Misc,,,,,,false);
+        Log("PLMAPAUDIO|open|handle=" $ PLMapSong);
+    }
+    else if(!bEnableShow && bPLMapAudio) StopMapAudio(true);
+}
+
+function StopMapAudio(bool bCloseSound)
+{
+    if(ViewportOwner.Actor!=None && bPLMapAudio)
+    {
+        if(PLMapSong>0) ViewportOwner.Actor.StopMusic(PLMapSong,1.0);
+        if(bCloseSound) ViewportOwner.Actor.PlaySound(class'MapScreen'.default.FadeOutScreenSound,SLOT_Misc,,,,,,false);
+        Log("PLMAPAUDIO|closed");
+    }
+    PLMapSong=0; bPLMapAudio=false;
+}
+
+function PlayMapWriting()
+{
+    local int N;
+    N=class'MapScreen'.default.WritingSounds.Length;
+    if(N>0) ViewportOwner.Actor.PlaySound(class'MapScreen'.default.WritingSounds[Rand(N)],SLOT_Misc,class'MapScreen'.default.WritingVolume,,,,,false);
+}
 
 function float BriefSound(Sound S)
 {
@@ -29,10 +66,13 @@ function float BriefSound(Sound S)
 function BeginBriefing(int Mask)
 {
     local CoopGameReplicationInfo G;
+    local int i;
     G=CoopGameReplicationInfo(ViewportOwner.Actor.GameReplicationInfo);
     if(G==None) return;
     BriefDay=GameClass.default.Days[G.CurrentDay];
     TryToEnableRenderBase();
+    BriefCount=0;
+    for(i=0;i<31;i++) if((Mask & (1<<i))!=0) BriefCount++;
     BriefMask=Mask; BriefErrand=-1; BriefStage=0; FadeSprite=-1;
     bBriefing=true;
     NextBriefTime=ViewportOwner.Actor.Level.TimeSecondsAlways+1.0;
@@ -61,11 +101,13 @@ function AdvanceBriefing()
         while(BriefErrand<SetupNumErrands && (BriefMask & (1<<BriefErrand))==0) BriefErrand++;
         if(BriefErrand>=SetupNumErrands)
         {
+            if(BriefCount>1) BriefSound(BriefDay.GetDudeStartComment());
             bBriefing=false; FadeSprite=-1;
             Log("PLBRIEF|finished");
             return;
         }
         FadeSprite=ErrandNameBase+BriefErrand;
+        if(Sprites[FadeSprite].tex!=None) PlayMapWriting();
         Duration=BriefSound(BriefDay.GetErrandStartComment(BriefErrand));
     }
     else if(BriefStage==1)
@@ -78,6 +120,7 @@ function AdvanceBriefing()
         if(BriefDay.IsLocationTexActive(BriefErrand))
         {
             FadeSprite=ErrandLocBase+BriefErrand;
+            if(Sprites[FadeSprite].tex!=None) PlayMapWriting();
             Duration=BriefSound(BriefDay.GetErrandFoundComment(BriefErrand));
         }
     }
@@ -97,10 +140,12 @@ function PostRender(Canvas C)
         SetupErrands(CoopGameReplicationInfo(ViewportOwner.Actor.GameReplicationInfo));
     }
     Super.PostRender(C);
+    UpdateMapAudio();
 }
 
 function MapReset()
 {
+    StopMapAudio(false);
     bBriefing=false; BriefDay=None;
     Super.MapReset();
 }
