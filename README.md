@@ -19,7 +19,7 @@ This is a community project, not an official release by Running With Scissors or
 
 ## Getting started
 
-1. Extract a complete playable package into a writable folder. A source checkout needs the launcher build step below first.
+1. Download the last [Release](https://github.com/hody109/tonys-coop-paradise-lost/releases). Extract a complete playable package into a writable folder. A source checkout needs the launcher build step below first.
 2. Run `TonysCoopParadiseLost.exe` or `Launch.cmd`.
 3. Select your `POSTAL2Complete` installation and click **SET UP**. Setup checks supported file hashes and creates an isolated `Runtime` folder.
 4. Enter your nickname and select a character.
