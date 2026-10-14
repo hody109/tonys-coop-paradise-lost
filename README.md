@@ -43,7 +43,8 @@ Enable **Borderless** in the launcher for windowed fullscreen on the active moni
 
 ## Gameplay
 
-- Only the host can press **Enter** to start the intro. Other gameplay controls remain locked during the waiting period and intro.
+- While waiting for players, **Escape** opens the menu so you can leave the session. Gameplay controls remain locked. Only the host can press **Enter** outside the menu to start the intro.
+- When the host starts the countdown, open menus close automatically. Escape stays blocked throughout the countdown and intro.
 - During the intro, each connected player can press **Enter** to vote to skip. Everyone must agree.
 - Select the Paradise Lost Dude or an original Nick's Coop character in the launcher.
 - All connected non-spectator players must gather at a zone exit. Revive downed teammates before leaving; AFK players still count.

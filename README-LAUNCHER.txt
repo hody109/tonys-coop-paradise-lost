@@ -90,13 +90,13 @@ The selection applies to your next session and travels with your character.
 These are the original Nick's Coop appearances, not arbitrary NPC models.
 
 INTRO CONTROLS
-Only the host can start the intro from the waiting screen. From the
-waiting screen until the first map loads, game keyboard and mouse inputs are blocked, including Escape, console,
-firing, inventory and camera controls. ENTER is the only exception: before
-the intro only the host may start it; while it plays each connected player
-may vote to skip it. All connected players must agree. One vote per player.
-Controls return automatically in the first map. Operating-system shortcuts
-such as switching windows or closing the game remain available.
+While waiting for players, ESC opens the menu and allows you to leave the
+session. Menu navigation works, but gameplay controls remain blocked.
+Only the host can press ENTER outside the menu to begin. When the host starts
+the countdown, open menus close automatically and ESC is blocked until the
+intro ends. During the cinematic, ENTER votes to skip; all connected players
+must agree. Normal gameplay controls return in the first map.
+Operating-system shortcuts remain available.
 
 CINEMATIC HOST VISIBILITY
 On dedicated servers, the scripted Dude represents the host during cinematic

@@ -302,7 +302,11 @@ simulated function PlayerTick(float DeltaTime)
         for(PLInteractionIndex=0;PLInteractionIndex<Player.InteractionMaster.GlobalInteractions.Length;PLInteractionIndex++)
         {
             PLConsole=CoopPLConsole(Player.InteractionMaster.GlobalInteractions[PLInteractionIndex]);
-            if(PLConsole!=None) PLConsole.PLInputPlayer=self;
+            if(PLConsole!=None)
+            {
+                PLConsole.PLInputPlayer=self;
+                PLConsole.UpdateIntroMenu();
+            }
         }
     if (Player!=None && Player.InteractionMaster!=None
         && (!bPLSkinRemembered || PLRememberedSkin!=PLSelectedSkin))
@@ -314,7 +318,7 @@ simulated function PlayerTick(float DeltaTime)
     if (PLIntroInputLocked())
     {
         if (CoopHUD(MyHUD)!=None)
-            CoopHUD(MyHUD).CoopWaitPlayersMessage2="Only the host can press ENTER to start.";
+            CoopHUD(MyHUD).CoopWaitPlayersMessage2="Host: ENTER to start. ESC: menu while waiting.";
         // Also discard controls held before the lock began.
         aForward=0; aStrafe=0; aUp=0; aTurn=0; aLookUp=0;
         bFire=0; bAltFire=0; bDuck=0; bRun=0; bPressedJump=false;
