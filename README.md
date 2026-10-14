@@ -37,6 +37,10 @@ The launcher starts a UDP relay automatically for dedicated hosting. Leave Playi
 
 For LAN play, connect to the host's local IPv4 address and selected port. The launcher does not configure your firewall or router.
 
+## Display mode
+
+Enable **Borderless** in the launcher for windowed fullscreen on the active monitor. The game uses desktop resolution without a title bar or resizing frame. Uncheck it for a normal window. Existing Fullscreen preferences are retained. This applies to your main game window; TEST SECOND PLAYER remains windowed.
+
 ## Gameplay
 
 - Only the host can press **Enter** to start the intro. Other gameplay controls remain locked during the waiting period and intro.
@@ -74,7 +78,7 @@ Include the game build, mod revision, day, map, task, last action, and whether t
 
 Use **LOGS** to locate `PLCoop-Server.log` and `PLCoop-Player.log`. Review logs before sharing: remove `PLHostKey` values and personal addresses. Never upload `Private`, `Runtime`, `SaveBackups` or launcher preferences to GitHub.
 
-See [the launcher guide](README-LAUNCHER.txt) for more details and [GitHub setup](GITHUB-SETUP.md) for repository instructions.
+See [the launcher guide](README-LAUNCHER.txt) for more details.
 
 ## Credits and redistribution
 

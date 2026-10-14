@@ -138,12 +138,30 @@ try {
     if ($Mode -like 'Listen*') { $ini='Server.ini' }
     Write-Host 'Starting the game. The local server will stop when you close the game.'
     $display='-windowed'
-    if ($Fullscreen) { $display='-fullscreen' }
+    if ($Fullscreen) {
+        Add-Type -Path (Join-Path $PSScriptRoot 'Source\Launcher\WindowMode.cs')
+        $monitor=[ParadiseLostCoop.WindowMode]::CaptureMonitor()
+        $width=$monitor.Right-$monitor.Left
+        $height=$monitor.Bottom-$monitor.Top
+        # A separate client config avoids saving desktop-sized window geometry
+        # over the player's ordinary windowed settings or server configuration.
+        $displayConfig=[IO.File]::ReadAllText((Join-Path $system $ini))
+        $displayConfig=[regex]::Replace($displayConfig,'(?im)^StartupFullscreen=.*$','StartupFullscreen=False')
+        $displayConfig=[regex]::Replace($displayConfig,'(?im)^WindowedViewportX=.*$',"WindowedViewportX=$width")
+        $displayConfig=[regex]::Replace($displayConfig,'(?im)^WindowedViewportY=.*$',"WindowedViewportY=$height")
+        $ini='BorderlessClient.ini'
+        [IO.File]::WriteAllText((Join-Path $system $ini),$displayConfig,[Text.Encoding]::Default)
+        Write-Host "Borderless window: ${width}x${height}."
+    }
     $url+='?Skin='+$skin
     $gameArgs=@($url,"ini=$ini",'userini=PLCoopUser.ini','log=PLCoop-Player.log',$display,'-newwindow')
     if ($Mode -like 'Listen*') { $gameArgs+="-port=$Port" }
     $game=Start-Process -FilePath (Join-Path $system 'PLCoop5025.exe') -ArgumentList $gameArgs -WorkingDirectory $system -PassThru
-    $game.WaitForExit()
+    if ($Fullscreen) {
+        if(![ParadiseLostCoop.WindowMode]::WaitForExit($game,$monitor)) {
+            Write-Warning 'No game viewport was found for borderless mode. Check the game startup log.'
+        }
+    } else { $game.WaitForExit() }
     if ($game.ExitCode -ne 0) { throw "The game exited with code $($game.ExitCode). See Runtime\System\PLCoop-Player.log." }
     if ($server -and $server.HasExited -and $server.ExitCode -ne 0) { throw "The server exited with code $($server.ExitCode). See Runtime\System\PLCoop-Server.log." }
     if ($relay -and $relay.HasExited -and $relay.ExitCode -ne 0) { throw 'The UDP relay stopped. See Runtime\System\PLCoopRelay.log.' }

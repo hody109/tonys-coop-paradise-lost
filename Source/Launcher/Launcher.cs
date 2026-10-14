@@ -92,7 +92,8 @@ public sealed partial class Launcher : Form {
         difficulty=new ComboBox{Location=new Point(242,318),Size=new Size(202,29),DropDownStyle=ComboBoxStyle.DropDownList,BackColor=panel,ForeColor=ink,FlatStyle=FlatStyle.Flat,Font=new Font("Segoe UI",11)};
         difficulty.Items.AddRange(DifficultyNames);difficulty.SelectedIndex=5;Controls.Add(difficulty);
         hints.SetToolTip(difficulty,"Host's new campaign difficulty. Continue keeps the saved difficulty. Joining uses the host's setting.");
-        fullscreen=new CheckBox {Text="Fullscreen",Location=new Point(29,356),Size=new Size(125,24),BackColor=Color.Transparent,ForeColor=ink};Controls.Add(fullscreen);
+        fullscreen=new CheckBox {Text="Borderless",Location=new Point(29,356),Size=new Size(125,24),BackColor=Color.Transparent,ForeColor=ink};Controls.Add(fullscreen);
+        hints.SetToolTip(fullscreen,"Windowed fullscreen without borders on the active monitor. Uncheck for a normal window.");
         listen=new CheckBox {Text="Direct host (experimental)",Location=new Point(165,356),Size=new Size(279,24),BackColor=Color.Transparent,ForeColor=muted,Font=new Font("Segoe UI",9)};Controls.Add(listen);
         checkpoint=LabelAt("",29,385,415,35,9,muted);
         LabelAt("JOIN A FRIEND",29,425,400,20,9,ink);

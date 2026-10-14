@@ -23,7 +23,10 @@ Use INTERNET for the optional Playit.gg tunnel, or connect directly on your LAN.
 This launcher does not implement Steam invitations or change firewall rules.
 
 OPTIONS
-Fullscreen changes how the game opens. Direct host (experimental) selects the
+Borderless opens the main game in a borderless window at desktop resolution
+on the active monitor. Uncheck it for a normal window. The test second player
+stays windowed. Existing Fullscreen preferences are retained.
+Direct host (experimental) selects the
 less-tested listen-server mode instead of the background dedicated server.
 Preferences are stored locally in launcher-settings.xml.
 The launcher stays responsive while the game runs. Closing it during a session
