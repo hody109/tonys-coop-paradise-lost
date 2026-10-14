@@ -1,0 +1,24 @@
+# Explicit allowlist: local game installations and credentials stay private.
+/*
+!/.gitignore
+!/README.md
+!/README-LAUNCHER.txt
+!/GITHUB-SETUP.md
+!/WORKSHOP-PREPARATION.txt
+!/Build.ps1
+!/BuildLauncher.ps1
+!/Setup.ps1
+!/Launch.ps1
+!/InstallPlayit.ps1
+!/Launch.cmd
+!/Setup.cmd
+!/Characters.json
+!/Source/
+!/Payload/
+!/Assets/
+# Never track local compiler/editor leftovers, even inside allowed folders.
+**/__pycache__/
+*.pyc
+*.log
+*.bak
+*.tmp
