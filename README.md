@@ -13,7 +13,7 @@ This is a community project, not an official release by Running With Scissors or
 ## Requirements
 
 - Windows with .NET Framework 4 and Windows PowerShell.
-- Your own installed copies of POSTAL 2 (5052) and Paradise Lost, using the supported **5025** version.
+- Your own installed copies of POSTAL 2 (5025) and Paradise Lost, using the supported **5025** version.
 - [Nick's Coop](https://steamcommunity.com/sharedfiles/filedetails/?id=737631813), installed through Steam Workshop.
 - The same mod packages on every player's computer. Keep Steam running.
 
