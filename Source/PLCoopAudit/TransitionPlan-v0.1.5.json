@@ -1,0 +1,1308 @@
+{
+  "candidates": [
+    {
+      "source": "PL-BanditHideout",
+      "url": "PL-suburbs-4#pod9?peer",
+      "target": "PL-suburbs-4",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Brewery",
+      "url": "PL-Industry#BrewPad?peer",
+      "target": "PL-Industry",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Church",
+      "url": "PL-Highlands#Pad11?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Church",
+      "url": "PL-Highlands#Pad7?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Church",
+      "url": "PL-Highlands#Pad8?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Church",
+      "url": "PL-underhub#pod2?peer",
+      "target": "PL-underhub",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-ColemanCave",
+      "url": "PL-EndOfThursday?peer",
+      "target": "PL-EndOfThursday",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-ColemanCave",
+      "url": "PL-Industry2#ColeMinePad?peer",
+      "target": "PL-Industry2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Compound",
+      "url": "PL-Highlands#Pad1?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-EastMall",
+      "url": "PL-Highlands#Pad9?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-EastMall",
+      "url": "PL-WestMall#Pad4?peer",
+      "target": "PL-WestMall",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-EastMall",
+      "url": "PL-rwsblock#Pad6?Peer",
+      "target": "PL-rwsblock",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Estates",
+      "url": "PL-Meadow#PlayerStart?peer",
+      "target": "PL-Meadow",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Estates",
+      "url": "PL-Suburbs-3#sub3_estates?peer",
+      "target": "PL-suburbs-3",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Estates",
+      "url": "PL-rwsblock#rwsblock_estates_alley?peer",
+      "target": "PL-rwsblock",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Estates",
+      "url": "PL-rwsblock#rwsblock_estates_bridge?peer",
+      "target": "PL-rwsblock",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-forest",
+      "url": "PL-Suburbs-2#pod5?peer",
+      "target": "PL-suburbs-2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-forest",
+      "url": "PL-suburbs-4#pod3?peer",
+      "target": "PL-suburbs-4",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-forest",
+      "url": "PL-underhub#pod2forest?peer",
+      "target": "PL-underhub",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt1",
+      "url": "PL-Greenbelt2#Pad1?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt1",
+      "url": "PL-Industry2#Pad2?peer",
+      "target": "PL-Industry2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt1",
+      "url": "PL-suburbs-1#Sub1_greenbelt1?peer",
+      "target": "PL-suburbs-1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt1",
+      "url": "PL-suburbs-2#sub2_greenbelt1?peer",
+      "target": "PL-suburbs-2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-Greenbelt1#Pad3?peer",
+      "target": "PL-Greenbelt1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-Highlands#highlands_greenbelt2?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-Industry#industry_greenbelt2?peer",
+      "target": "PL-Industry",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-Industry2#Pad3?peer",
+      "target": "PL-Industry2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-Industry2#Pad4?peer",
+      "target": "PL-Industry2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-Junkyard#Pad7?peer",
+      "target": "PL-Junkyard",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-JunkyardArena-Apoc#ApocalypsePad?peer",
+      "target": "PL-JunkyardArena-Apoc",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-RoboFact#Pad1?peer",
+      "target": "PL-RoboFact",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Hell_ent",
+      "url": "PL-Hell_Part1",
+      "target": "PL-Hell_Part1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Hell_Part1",
+      "url": "PL-Hell_Part2#HellPart2_HellPart1?peer",
+      "target": "PL-Hell_Part2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Hell_Part2",
+      "url": "PL-FinalBoss?peer",
+      "target": "PL-FinalBoss",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Hell_Part2",
+      "url": "PL-Hell_Part1#HellPart1_HellPart2?peer",
+      "target": "PL-Hell_Part1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-Church#Pad11?peer",
+      "target": "PL-Church",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-Church#Pad7?peer",
+      "target": "PL-Church",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-Church#Pad8?peer",
+      "target": "PL-Church",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-Compound#Pad1?peer",
+      "target": "PL-Compound",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-EastMall#Pad2?peer",
+      "target": "PL-EastMall",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-Greenbelt2#greenbelt2_highlands?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-Industry#Pad1?peer",
+      "target": "PL-Industry",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-Outro",
+      "target": "PL-Outro",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-WestMall#Pad1?peer",
+      "target": "PL-WestMall",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-WestMall#Pad2?Peer",
+      "target": "PL-WestMall",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-rwsblock#pod5?peer",
+      "target": "PL-rwsblock",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry",
+      "url": "PL-Brewery#IndyPad?peer",
+      "target": "PL-Brewery",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry",
+      "url": "PL-Greenbelt2#greenbelt2_industry?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry",
+      "url": "PL-Highlands#Pad3?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry",
+      "url": "PL-Industry2#industry2_industry1?peer",
+      "target": "PL-Industry2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry",
+      "url": "PL-Saloon#Jail?peer",
+      "target": "PL-Saloon",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry2",
+      "url": "PL-ColemanCave#Pad1?peer",
+      "target": "PL-ColemanCave",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry2",
+      "url": "PL-Greenbelt1#Pad4?peer",
+      "target": "PL-Greenbelt1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry2",
+      "url": "PL-Greenbelt2#Pad5?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry2",
+      "url": "PL-Greenbelt2#Pad6?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry2",
+      "url": "PL-Industry#industry1_industry2?peer",
+      "target": "PL-Industry",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry2",
+      "url": "PL-Suburbs-1#sub1_industry2?peer",
+      "target": "PL-suburbs-1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Intro",
+      "url": "PL-Highlands#PlayerStart?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Junkyard",
+      "url": "PL-Greenbelt2#Pad7?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-JunkyardArena-Apoc",
+      "url": "PL-Greenbelt2#Pad7?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Meadow",
+      "url": "PL-Estates#oldmanreturn?peer",
+      "target": "PL-Estates",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Outro-AC",
+      "url": "PL-Credits#CreditsStart?peer",
+      "target": "PL-Credits",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Outro",
+      "url": "PL-Credits#CreditsStart?peer",
+      "target": "PL-Credits",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-RoboFact",
+      "url": "PL-Greenbelt2#Pad11?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-RoboFact",
+      "url": "PL-Greenbelt2#Pad2?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-rwsblock",
+      "url": "PL-EastMall#Pad1?Peer",
+      "target": "PL-EastMall",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-rwsblock",
+      "url": "PL-Estates#estates_rwsblock_alley?peer",
+      "target": "PL-Estates",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-rwsblock",
+      "url": "PL-Estates#estates_rwsblock_bridge?peer",
+      "target": "PL-Estates",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-rwsblock",
+      "url": "PL-Highlands#Pad5?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-rwsblock",
+      "url": "PL-suburbs-1#sub1_rwsblock?peer",
+      "target": "PL-suburbs-1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Saloon",
+      "url": "PL-Industry#TheHole?peer",
+      "target": "PL-Industry",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-1",
+      "url": "PL-Greenbelt1#Greenbelt1_sub1?peer",
+      "target": "PL-Greenbelt1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-1",
+      "url": "PL-industry2#Industry2_sub1?peer",
+      "target": "PL-Industry2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-1",
+      "url": "PL-rwsblock#rwsblock_sub1?peer",
+      "target": "PL-rwsblock",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-1",
+      "url": "PL-suburbs-2#pod2?peer",
+      "target": "PL-suburbs-2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-1",
+      "url": "PL-suburbs-2#pod9?peer",
+      "target": "PL-suburbs-2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-1",
+      "url": "PL-suburbs-3#sub3_sub1?peer",
+      "target": "PL-suburbs-3",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-1",
+      "url": "PL-suburbs-3#sub3_sub1b",
+      "target": "PL-suburbs-3",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-2",
+      "url": "PL-Greenbelt1#greenbelt1_sub2?peer",
+      "target": "PL-Greenbelt1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-2",
+      "url": "PL-WinterWonderLand#WonderLandEntrance?peer",
+      "target": "PL-WinterWonderLand",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-2",
+      "url": "PL-forest#ForestEntranceTele?peer",
+      "target": "PL-forest",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-2",
+      "url": "PL-suburbs-1#pod4?peer",
+      "target": "PL-suburbs-1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-2",
+      "url": "PL-suburbs-1#pod5?peer",
+      "target": "PL-suburbs-1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-2",
+      "url": "PL-suburbs-4#HideoutEntranceTele?peer",
+      "target": "PL-suburbs-4",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-3",
+      "url": "PL-estates#estates_sub3?peer",
+      "target": "PL-Estates",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-3",
+      "url": "PL-suburbs-1#sub1_sub3a?peer",
+      "target": "PL-suburbs-1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-3",
+      "url": "PL-suburbs-1#sub1_sub3b?peer",
+      "target": "PL-suburbs-1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-3",
+      "url": "PL-suburbs-4#pod1?peer",
+      "target": "PL-suburbs-4",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-3",
+      "url": "PL-underhub#pod777?peer",
+      "target": "PL-underhub",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-4",
+      "url": "PL-BanditHideout#pod1?peer",
+      "target": "PL-BanditHideout",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-4",
+      "url": "PL-Suburbs-3#pod6?peer",
+      "target": "PL-suburbs-3",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-4",
+      "url": "PL-forest#ForestEntranceTele?peer",
+      "target": "PL-forest",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-4",
+      "url": "PL-suburbs-2#GhettoEntranceTele?peer",
+      "target": "PL-suburbs-2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-ToraBora",
+      "url": "PL-underhub#pod3?peer",
+      "target": "PL-underhub",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-underhub",
+      "url": "PL-Church#pad9?peer",
+      "target": "PL-Church",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-underhub",
+      "url": "PL-ToraBora#pad1?peer",
+      "target": "PL-ToraBora",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-underhub",
+      "url": "PL-forest#podholio?peer",
+      "target": "PL-forest",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-underhub",
+      "url": "PL-suburbs-3#podhole?peer",
+      "target": "PL-suburbs-3",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-WestMall",
+      "url": "PL-EastMall#Pad3?peer",
+      "target": "PL-EastMall",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-WestMall",
+      "url": "PL-Highlands#Pad10?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-WestMall",
+      "url": "PL-Highlands#Pad2?Peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-WinterWonderLand",
+      "url": "PL-suburbs-2#pod69?peer",
+      "target": "PL-suburbs-2",
+      "evidence": "map-binary-candidate"
+    }
+  ],
+  "route": [
+    {
+      "source": "PL-Highlands",
+      "url": "PL-Greenbelt2#greenbelt2_highlands?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-Highlands#highlands_greenbelt2?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-Industry#Pad1?peer",
+      "target": "PL-Industry",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry",
+      "url": "PL-Highlands#Pad3?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-rwsblock#pod5?peer",
+      "target": "PL-rwsblock",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-rwsblock",
+      "url": "PL-Highlands#Pad5?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-Church#Pad11?peer",
+      "target": "PL-Church",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Church",
+      "url": "PL-Highlands#Pad11?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-Church#Pad7?peer",
+      "target": "PL-Church",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Church",
+      "url": "PL-Highlands#Pad7?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-EastMall#Pad2?peer",
+      "target": "PL-EastMall",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-EastMall",
+      "url": "PL-Highlands#Pad9?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-WestMall#Pad1?peer",
+      "target": "PL-WestMall",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-WestMall",
+      "url": "PL-Highlands#Pad10?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-Church#Pad8?peer",
+      "target": "PL-Church",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Church",
+      "url": "PL-underhub#pod2?peer",
+      "target": "PL-underhub",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-underhub",
+      "url": "PL-suburbs-3#podhole?peer",
+      "target": "PL-suburbs-3",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-3",
+      "url": "PL-suburbs-1#sub1_sub3a?peer",
+      "target": "PL-suburbs-1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-1",
+      "url": "PL-industry2#Industry2_sub1?peer",
+      "target": "PL-Industry2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry2",
+      "url": "PL-Greenbelt2#Pad5?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-Industry2#Pad3?peer",
+      "target": "PL-Industry2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry2",
+      "url": "PL-Greenbelt2#Pad6?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-Greenbelt1#Pad3?peer",
+      "target": "PL-Greenbelt1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt1",
+      "url": "PL-suburbs-1#Sub1_greenbelt1?peer",
+      "target": "PL-suburbs-1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-1",
+      "url": "PL-suburbs-2#pod2?peer",
+      "target": "PL-suburbs-2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-2",
+      "url": "PL-suburbs-1#pod4?peer",
+      "target": "PL-suburbs-1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-1",
+      "url": "PL-suburbs-2#pod9?peer",
+      "target": "PL-suburbs-2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-2",
+      "url": "PL-suburbs-1#pod5?peer",
+      "target": "PL-suburbs-1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-1",
+      "url": "PL-rwsblock#rwsblock_sub1?peer",
+      "target": "PL-rwsblock",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-rwsblock",
+      "url": "PL-Estates#estates_rwsblock_alley?peer",
+      "target": "PL-Estates",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Estates",
+      "url": "PL-Suburbs-3#sub3_estates?peer",
+      "target": "PL-suburbs-3",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-3",
+      "url": "PL-suburbs-4#pod1?peer",
+      "target": "PL-suburbs-4",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-4",
+      "url": "PL-suburbs-2#GhettoEntranceTele?peer",
+      "target": "PL-suburbs-2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-2",
+      "url": "PL-Greenbelt1#greenbelt1_sub2?peer",
+      "target": "PL-Greenbelt1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt1",
+      "url": "PL-Greenbelt2#Pad1?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-Industry#industry_greenbelt2?peer",
+      "target": "PL-Industry",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry",
+      "url": "PL-Greenbelt2#greenbelt2_industry?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-Industry2#Pad4?peer",
+      "target": "PL-Industry2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry2",
+      "url": "PL-Industry#industry1_industry2?peer",
+      "target": "PL-Industry",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry",
+      "url": "PL-Industry2#industry2_industry1?peer",
+      "target": "PL-Industry2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry2",
+      "url": "PL-Suburbs-1#sub1_industry2?peer",
+      "target": "PL-suburbs-1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-1",
+      "url": "PL-suburbs-3#sub3_sub1?peer",
+      "target": "PL-suburbs-3",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-3",
+      "url": "PL-estates#estates_sub3?peer",
+      "target": "PL-Estates",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Estates",
+      "url": "PL-rwsblock#rwsblock_estates_alley?peer",
+      "target": "PL-rwsblock",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-rwsblock",
+      "url": "PL-EastMall#Pad1?Peer",
+      "target": "PL-EastMall",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-EastMall",
+      "url": "PL-WestMall#Pad4?peer",
+      "target": "PL-WestMall",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-WestMall",
+      "url": "PL-Highlands#Pad2?Peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-Compound#Pad1?peer",
+      "target": "PL-Compound",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Compound",
+      "url": "PL-Highlands#Pad1?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-Outro",
+      "target": "PL-Outro",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Outro",
+      "url": "PL-Credits#CreditsStart?peer",
+      "target": "PL-Credits",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Credits",
+      "url": "PL-BanditHideout",
+      "target": "PL-BanditHideout",
+      "evidence": "setup-travel"
+    },
+    {
+      "source": "PL-BanditHideout",
+      "url": "PL-suburbs-4#pod9?peer",
+      "target": "PL-suburbs-4",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-4",
+      "url": "PL-forest#ForestEntranceTele?peer",
+      "target": "PL-forest",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-forest",
+      "url": "PL-Suburbs-2#pod5?peer",
+      "target": "PL-suburbs-2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-2",
+      "url": "PL-forest#ForestEntranceTele?peer",
+      "target": "PL-forest",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-forest",
+      "url": "PL-underhub#pod2forest?peer",
+      "target": "PL-underhub",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-underhub",
+      "url": "PL-Church#pad9?peer",
+      "target": "PL-Church",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Church",
+      "url": "PL-Highlands#Pad8?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-WestMall#Pad2?Peer",
+      "target": "PL-WestMall",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-WestMall",
+      "url": "PL-EastMall#Pad3?peer",
+      "target": "PL-EastMall",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-EastMall",
+      "url": "PL-rwsblock#Pad6?Peer",
+      "target": "PL-rwsblock",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-rwsblock",
+      "url": "PL-Estates#estates_rwsblock_bridge?peer",
+      "target": "PL-Estates",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Estates",
+      "url": "PL-Meadow#PlayerStart?peer",
+      "target": "PL-Meadow",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Meadow",
+      "url": "PL-Estates#oldmanreturn?peer",
+      "target": "PL-Estates",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Estates",
+      "url": "PL-rwsblock#rwsblock_estates_bridge?peer",
+      "target": "PL-rwsblock",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-rwsblock",
+      "url": "PL-suburbs-1#sub1_rwsblock?peer",
+      "target": "PL-suburbs-1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-1",
+      "url": "PL-Greenbelt1#Greenbelt1_sub1?peer",
+      "target": "PL-Greenbelt1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt1",
+      "url": "PL-Industry2#Pad2?peer",
+      "target": "PL-Industry2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry2",
+      "url": "PL-ColemanCave#Pad1?peer",
+      "target": "PL-ColemanCave",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-ColemanCave",
+      "url": "PL-Industry2#ColeMinePad?peer",
+      "target": "PL-Industry2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry2",
+      "url": "PL-Greenbelt1#Pad4?peer",
+      "target": "PL-Greenbelt1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt1",
+      "url": "PL-suburbs-2#sub2_greenbelt1?peer",
+      "target": "PL-suburbs-2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-2",
+      "url": "PL-suburbs-4#HideoutEntranceTele?peer",
+      "target": "PL-suburbs-4",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-4",
+      "url": "PL-Suburbs-3#pod6?peer",
+      "target": "PL-suburbs-3",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-3",
+      "url": "PL-underhub#pod777?peer",
+      "target": "PL-underhub",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-underhub",
+      "url": "PL-ToraBora#pad1?peer",
+      "target": "PL-ToraBora",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-ToraBora",
+      "url": "PL-underhub#pod3?peer",
+      "target": "PL-underhub",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-underhub",
+      "url": "PL-forest#podholio?peer",
+      "target": "PL-forest",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-forest",
+      "url": "PL-suburbs-4#pod3?peer",
+      "target": "PL-suburbs-4",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-4",
+      "url": "PL-BanditHideout#pod1?peer",
+      "target": "PL-BanditHideout",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-BanditHideout",
+      "url": "PL-Brewery",
+      "target": "PL-Brewery",
+      "evidence": "setup-travel"
+    },
+    {
+      "source": "PL-Brewery",
+      "url": "PL-Industry#BrewPad?peer",
+      "target": "PL-Industry",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry",
+      "url": "PL-Saloon#Jail?peer",
+      "target": "PL-Saloon",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Saloon",
+      "url": "PL-Industry#TheHole?peer",
+      "target": "PL-Industry",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Industry",
+      "url": "PL-Brewery#IndyPad?peer",
+      "target": "PL-Brewery",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Brewery",
+      "url": "PL-ColemanCave",
+      "target": "PL-ColemanCave",
+      "evidence": "setup-travel"
+    },
+    {
+      "source": "PL-ColemanCave",
+      "url": "PL-EndOfThursday?peer",
+      "target": "PL-EndOfThursday",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-EndOfThursday",
+      "url": "PL-Greenbelt2",
+      "target": "PL-Greenbelt2",
+      "evidence": "setup-travel"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-RoboFact#Pad1?peer",
+      "target": "PL-RoboFact",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-RoboFact",
+      "url": "PL-Greenbelt2#Pad11?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-Junkyard#Pad7?peer",
+      "target": "PL-Junkyard",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Junkyard",
+      "url": "PL-Greenbelt2#Pad7?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-JunkyardArena-Apoc#ApocalypsePad?peer",
+      "target": "PL-JunkyardArena-Apoc",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-JunkyardArena-Apoc",
+      "url": "PL-Greenbelt2#Pad7?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-Hell_ent",
+      "target": "PL-Hell_ent",
+      "evidence": "setup-travel"
+    },
+    {
+      "source": "PL-Hell_ent",
+      "url": "PL-Hell_Part1",
+      "target": "PL-Hell_Part1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Hell_Part1",
+      "url": "PL-Hell_Part2#HellPart2_HellPart1?peer",
+      "target": "PL-Hell_Part2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Hell_Part2",
+      "url": "PL-FinalBoss?peer",
+      "target": "PL-FinalBoss",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-FinalBoss",
+      "url": "PL-Hell_Part2",
+      "target": "PL-Hell_Part2",
+      "evidence": "setup-travel"
+    },
+    {
+      "source": "PL-Hell_Part2",
+      "url": "PL-Hell_Part1#HellPart1_HellPart2?peer",
+      "target": "PL-Hell_Part1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Hell_Part1",
+      "url": "PL-Intro",
+      "target": "PL-Intro",
+      "evidence": "setup-travel"
+    },
+    {
+      "source": "PL-Intro",
+      "url": "PL-Highlands#PlayerStart?peer",
+      "target": "PL-Highlands",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Highlands",
+      "url": "PL-Outro-AC",
+      "target": "PL-Outro-AC",
+      "evidence": "setup-travel"
+    },
+    {
+      "source": "PL-Outro-AC",
+      "url": "PL-Credits#CreditsStart?peer",
+      "target": "PL-Credits",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Credits",
+      "url": "PL-RoboFact",
+      "target": "PL-RoboFact",
+      "evidence": "setup-travel"
+    },
+    {
+      "source": "PL-RoboFact",
+      "url": "PL-Greenbelt2#Pad2?peer",
+      "target": "PL-Greenbelt2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-Greenbelt2",
+      "url": "PL-suburbs-1",
+      "target": "PL-suburbs-1",
+      "evidence": "setup-travel"
+    },
+    {
+      "source": "PL-suburbs-1",
+      "url": "PL-suburbs-3#sub3_sub1b",
+      "target": "PL-suburbs-3",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-3",
+      "url": "PL-suburbs-1#sub1_sub3b?peer",
+      "target": "PL-suburbs-1",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-1",
+      "url": "PL-suburbs-2",
+      "target": "PL-suburbs-2",
+      "evidence": "setup-travel"
+    },
+    {
+      "source": "PL-suburbs-2",
+      "url": "PL-WinterWonderLand#WonderLandEntrance?peer",
+      "target": "PL-WinterWonderLand",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-WinterWonderLand",
+      "url": "PL-suburbs-2#pod69?peer",
+      "target": "PL-suburbs-2",
+      "evidence": "map-binary-candidate"
+    },
+    {
+      "source": "PL-suburbs-2",
+      "url": "PL-EndOfMonday",
+      "target": "PL-EndOfMonday",
+      "evidence": "map-load-only"
+    },
+    {
+      "source": "PL-EndOfMonday",
+      "url": "PL-JunkyardArena",
+      "target": "PL-JunkyardArena",
+      "evidence": "map-load-only"
+    }
+  ]
+}
