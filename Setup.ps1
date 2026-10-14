@@ -1,5 +1,23 @@
 param([string]$GamePath = 'C:\Program Files (x86)\Steam\steamapps\common\POSTAL2Complete', [switch]$CheckOnly)
 $ErrorActionPreference = 'Stop'
+function Find-NicksCoopWorkshop([string]$InstallationPath) {
+    # POSTAL 2 can unpack Workshop items into the game directory, while Steam
+    # also installs them beside common in the selected Steam library.
+    $steamApps = Split-Path -Parent (Split-Path -Parent $InstallationPath)
+    $candidates = @(
+        (Join-Path $InstallationPath 'WorkshopContent\737631813'),
+        (Join-Path $steamApps 'workshop\content\223470\737631813')
+    )
+    $required = @('UCC_SERVER.zip','NicksCoopCustomMods.ini','NicksCoopInvReplace.ini')
+    foreach ($candidate in $candidates) {
+        $complete = $true
+        foreach ($name in $required) {
+            if (!(Test-Path -LiteralPath (Join-Path $candidate $name) -PathType Leaf)) { $complete = $false }
+        }
+        if ($complete) { return $candidate }
+    }
+    throw ("Nick's Coop files were not found or are incomplete. Finish downloading Workshop item 737631813 in Steam, then retry SET UP. Required: " + ($required -join ', ') + ". Checked: " + ($candidates -join '; '))
+}
 $GamePath = (Resolve-Path -LiteralPath $GamePath).Path
 $dlc = Join-Path $GamePath 'Paradise Lost'
 $payload = Join-Path $PSScriptRoot 'Payload'
@@ -15,8 +33,8 @@ foreach ($entry in $manifest) {
 }
 if ($CheckOnly) { Write-Host 'Game file compatibility verified.'; exit 0 }
 if (Test-Path -LiteralPath $runtime) { throw 'Runtime already exists. For a fresh installation, extract the package into a new folder to preserve existing saves.' }
-$workshop = Join-Path $GamePath 'WorkshopContent\737631813'
-if (!(Test-Path -LiteralPath (Join-Path $workshop 'UCC_SERVER.zip'))) { throw 'Missing Nicks Coop Workshop item 737631813 (UCC_SERVER.zip). Install Nicks Coop from Steam first.' }
+$workshop = Find-NicksCoopWorkshop $GamePath
+Write-Host "Nick's Coop found: $workshop"
 # Install into a sibling directory. A failed copy must not leave a partial
 # Runtime that blocks the next setup attempt or appears ready to the launcher.
 $destinationRuntime=$runtime
