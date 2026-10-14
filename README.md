@@ -49,6 +49,8 @@ Enable **Borderless** in the launcher for windowed fullscreen on the active moni
 
 ## Gameplay
 
+- Vending machines work for each player. Stand in the machine's interaction area and press your **Use inventory** key (shown by the in-game prompt). Left-click an item to buy; press **Escape** to close the menu. Purchases use your own money. Original day-specific stock, healing and capacity restrictions apply. The world keeps running while shopping.
+
 - While waiting for players, **Escape** opens the menu so you can leave the session. Gameplay controls remain locked. Only the host can press **Enter** outside the menu to start the intro.
 - When the host starts the countdown, open menus close automatically. Escape stays blocked throughout the countdown and intro.
 - During the intro, each connected player can press **Enter** to vote to skip. Everyone must agree.

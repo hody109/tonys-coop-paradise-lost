@@ -31,9 +31,131 @@ var array<bool> PLCinematicOldHidden;
 var bool bPLLevelAudioReady;
 var bool bPLLevelMusicRestored;
 
+var P2EVendingMachineTrigger PLVendor;
+var int PLVendorSession;
+var float PLNextVendorRequest;
+var CoopPLVendingView PLVendorView;
+var CoopPLVendingMenu PLVendingMenu;
+var Pickup PLActiveVendorPickup;
+
+simulated function P2EVendingMachineTrigger PLNearbyVendor()
+{
+ local P2EVendingMachineTrigger V,Best;
+ local vector Offset;
+ local float Distance,BestDistance;
+ if(Pawn==None || Pawn.Health<=0) return None;
+ BestDistance=1000000;
+ foreach AllActors(class'P2EVendingMachineTrigger',V)
+ {
+  if(V.IsA('CoopPLVendingView')) continue;
+  Offset=Pawn.Location-V.Location;
+  if(Abs(Offset.Z)>V.CollisionHeight+Pawn.CollisionHeight) continue;
+  Offset.Z=0;Distance=VSize(Offset);
+  if(Distance<=V.CollisionRadius+Pawn.CollisionRadius && Distance<BestDistance)
+  {Best=V;BestDistance=Distance;}
+ }
+ return Best;
+}
+exec function ActivateItem()
+{
+ if(!PLIntroInputLocked() && !GetCoopWaitStatus() && PLNearbyVendor()!=None)
+ {ServerPLOpenVendor();return;}
+ Super.ActivateItem();
+}
+function ServerPLOpenVendor()
+{
+ local int I;
+ if(Level.TimeSeconds<PLNextVendorRequest || PLIntroInputLocked() || GetCoopWaitStatus())return;
+ PLNextVendorRequest=Level.TimeSeconds+0.3;
+ PLVendor=PLNearbyVendor();
+ if(PLVendor==None)return;
+ PLVendor.InitializeDayItemList();PLVendor.UpdateItemQuantities();
+ PLVendorSession++;
+ ClientPLVendorBegin(PLVendorSession,PLVendor.Background,PLVendor.MoneyBox,PLVendor.ItemButton,PLVendor.ItemBox,PLVendor.Song);
+ for(I=0;I<PLVendor.ItemList.Length;I++)
+ {
+  if(PLVendor.ItemList[I].ItemPickup==None)
+   PLVendor.ItemList[I].ItemPickup=class<Pickup>(DynamicLoadObject(PLVendor.ItemList[I].ItemPickupName,class'Class'));
+  if(PLVendor.ItemList[I].ItemIcon==None)
+   PLVendor.ItemList[I].ItemIcon=Texture(DynamicLoadObject(PLVendor.ItemList[I].ItemIconName,class'Texture'));
+  ClientPLVendorItem(PLVendorSession,I,PLVendor.ItemList[I]);
+ }
+ ClientPLVendorShow(PLVendorSession);
+}
+simulated function ClientPLVendorBegin(int Session,Texture Background,Texture MoneyBox,Texture ItemButton,Texture ItemBox,string Song)
+{
+ if(PLVendingMenu!=None)PLVendingMenu.CloseMenu();
+ if(PLVendorView!=None)PLVendorView.Destroy();
+ PLVendorSession=Session;
+ PLVendorView=Spawn(class'CoopPLVendingView');
+ if(PLVendorView==None)return;
+ PLVendorView.Background=Background;PLVendorView.MoneyBox=MoneyBox;
+ PLVendorView.ItemButton=ItemButton;PLVendorView.ItemBox=ItemBox;PLVendorView.Song=Song;
+}
+simulated function ClientPLVendorItem(int Session,int Index,P2EVendingMachineTrigger.Item Entry)
+{
+ if(Session!=PLVendorSession || PLVendorView==None || Index<0 || Index>255)return;
+ if(PLVendorView.ItemList.Length<=Index)PLVendorView.ItemList.Length=Index+1;
+ PLVendorView.ItemList[Index]=Entry;
+}
+simulated function ClientPLVendorShow(int Session)
+{
+ if(Session!=PLVendorSession || PLVendorView==None || Pawn==None || Viewport(Player)==None)return;
+ PLVendingMenu=new(Player.InteractionMaster) class'CoopPLVendingMenu';
+ Player.LocalInteractions.Insert(0,1);Player.LocalInteractions[0]=PLVendingMenu;
+ PLVendingMenu.ViewportOwner=Viewport(Player);PLVendingMenu.Initialize();
+ PLVendingMenu.Master=Player.InteractionMaster;PLVendingMenu.Buyer=self;PLVendingMenu.Session=Session;
+ PLVendingMenu.InitializeMenu(Pawn,PLVendorView);
+ Log("PLVENDOR|menu-open|items="$PLVendorView.ItemList.Length);
+}
+function ServerPLCloseVendor(int Session)
+{
+ if(Session==PLVendorSession)PLVendor=None;
+}
+function ServerPLBuyVendor(int Session,int Index)
+{
+ local bool Success;
+ local MoneyInv Money;
+ local int Balance;
+ local CoopPLPlayerClient C;
+ if(Session!=PLVendorSession || PLVendor==None || PLNearbyVendor()!=PLVendor || Pawn==None || Pawn.Health<=0)
+ {Log("PLVENDOR|rejected|session-or-range");ClientPLVendorResult(Session,Index,false,0,0);return;}
+ if(Level.TimeSeconds<PLNextVendorRequest)
+ {ClientPLVendorResult(Session,Index,false,0,0);return;}
+ PLNextVendorRequest=Level.TimeSeconds+0.15;
+ Success=class'CoopPLVendingPurchase'.static.Buy(self,PLVendor,Index);
+ Money=MoneyInv(Pawn.FindInventoryType(class'MoneyInv'));
+ if(Index<0 || Index>=PLVendor.ItemList.Length)
+ {ClientPLVendorResult(Session,Index,false,0,0);return;}
+ if(Money!=None)Balance=Money.Amount;
+ ClientPLVendorResult(Session,Index,Success,PLVendor.ItemList[Index].QuantityAvailable,Balance);
+ // Refresh other open menus; the server rechecks stock for every purchase.
+ foreach DynamicActors(class'CoopPLPlayerClient',C)
+  if(C!=self && C.PLVendor!=None)
+  {
+   C.PLVendor.UpdateItemQuantities();
+   for(Index=0;Index<C.PLVendor.ItemList.Length;Index++)
+    C.ClientPLVendorItem(C.PLVendorSession,Index,C.PLVendor.ItemList[Index]);
+  }
+}
+simulated function ClientPLVendorResult(int Session,int Index,bool Success,int Quantity,int Money)
+{
+ if(Session!=PLVendorSession || PLVendingMenu==None)return;
+ PLVendingMenu.Pending=false;
+ if(Success)
+ {
+  if(Index>=0 && Index<PLVendorView.ItemList.Length)PLVendorView.ItemList[Index].QuantityAvailable=Quantity;
+  if(PLVendingMenu.MenuUserMoney!=None)PLVendingMenu.MenuUserMoney.Amount=Money;
+  ClientPlaySound(PLVendingMenu.BuySuccessfulSound);
+ }
+ else ClientMessage("Purchase unavailable: check funds, stock and inventory capacity.");
+ Log("PLVENDOR|purchase-result|success="$Success);
+}
+
 simulated event PreClientTravel()
 {
  local Actor A;
+ if(PLVendingMenu!=None)PLVendingMenu.CloseMenu();
  Super.PreClientTravel();
  if(Level.NetMode!=NM_Client) return;
  foreach AllActors(class'Actor',A)
@@ -185,7 +307,8 @@ function NETCoopWaitContinue()
 
 replication
 {
-    reliable if(Role<ROLE_Authority) ServerPLVoteSkip, ServerPLRestoreLevelMusic;
+    reliable if(Role<ROLE_Authority) ServerPLVoteSkip, ServerPLRestoreLevelMusic, ServerPLOpenVendor, ServerPLBuyVendor, ServerPLCloseVendor;
+    reliable if(Role==ROLE_Authority) ClientPLVendorBegin, ClientPLVendorItem, ClientPLVendorShow, ClientPLVendorResult;
 	reliable if( Role == ROLE_Authority )
 		xClientHitByFlashBang, bPLIntroLocked, PLSelectedSkin, ClientPLBriefing, ClientPLDayLoad;
 }
@@ -380,6 +503,11 @@ simulated function PlayerTick(float DeltaTime)
         if (CoopHUD(MyHUD)!=None)
             CoopHUD(MyHUD).CoopWaitPlayersMessage2="Host: ENTER to start. ESC: menu while waiting.";
         // Also discard controls held before the lock began.
+        aForward=0; aStrafe=0; aUp=0; aTurn=0; aLookUp=0;
+        bFire=0; bAltFire=0; bDuck=0; bRun=0; bPressedJump=false;
+    }
+    if(PLVendingMenu!=None)
+    {
         aForward=0; aStrafe=0; aUp=0; aTurn=0; aLookUp=0;
         bFire=0; bAltFire=0; bDuck=0; bRun=0; bPressedJump=false;
     }

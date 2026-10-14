@@ -85,6 +85,7 @@ function LockPLIntro()
 // Remote controllers do not run PlayerTick on the dedicated server.
 function bool PLSharedPickup(Pickup Item)
 {
+    if(Item.Tag=='PLVendorPurchase') return false;
     if(P2AmmoPickup(Item)!=None) return true;
     return P2WeaponPickup(Item)!=None && !P2WeaponPickup(Item).bForTransferOnly
         && !P2WeaponPickup(Item).bForRobberyOnly && !Item.IsA('P2WeaponPickupErrand');
@@ -104,6 +105,10 @@ function bool PLAlreadyClaimed(Pawn P,Pickup Item)
 
 function bool PickupQuery(Pawn Other,Pickup Item)
 {
+    // Spawn/SetLocation can call Touch before a purchase is configured. Only
+    // its buyer may claim it, during the explicit transaction below.
+    if(Item.Tag=='PLVendorPurchase' && (Other==None || CoopPLPlayerClient(Other.Controller)==None))return false;
+    if(Item.Tag=='PLVendorPurchase' && (Item.Owner!=Other.Controller || CoopPLPlayerClient(Other.Controller).PLActiveVendorPickup!=Item))return false;
     PLPickupItem=None; PLPickupReceiver=None;
     if(PLSharedPickup(Item) && Other!=None && PlayerController(Other.Controller)!=None)
     {
@@ -134,6 +139,7 @@ function bool ShouldRespawn(Pickup Item)
         Item.RespawnTime=0.01;
         return true;
     }
+    if(Item.Tag=='PLVendorPurchase') return false;
     return Super.ShouldRespawn(Item);
 }
 
